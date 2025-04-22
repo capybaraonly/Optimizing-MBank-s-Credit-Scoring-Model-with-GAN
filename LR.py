@@ -95,30 +95,30 @@ employmentLength_counts = train['employmentLength'].value_counts(dropna=False)
 
 
 # # 数值连续型特征概率分布可视化//图没跑
-# f = pd.mel [train, value_vars=numerical_continus_fea)
+# f = pd.melt(train, value_vars=numerical_continus_fea)
 # g = sns.FacetGrid(f, col="variable", col_wrap=4, sharex=False, sharey=False)
 # g = g.map(sns.histplot, "value", kde=True)  
 # plt.show()
 
-# loanAmount Values Distribution and after log
+# # loanAmount Values Distribution and after log
 # plt.figure(figsize=(20, 12))
 
 # plt.suptitle('loanAmount Values Distribution', fontsize=22)
 # plt.subplot(221)
-# sub_plot_1 = sns.histplo [train['loanAmnt'], kde=True)
+# sub_plot_1 = sns.histplot(np.log(train['loanAmnt']), kde=True)
 # sub_plot_1.set_title("loanAmnt Distribution", fontsize=18)
 # sub_plot_1.set_xlabel("")
 # sub_plot_1.set_ylabel("Probability", fontsize=15)
 
 # plt.subplot(222)
-# sub_plot_2 = sns.histplot(np.lo [train['loanAmnt']), kde=True)
+# sub_plot_2 = sns.histplot(np.log (train['loanAmnt']), kde=True)
 # sub_plot_2.set_title("loanAmnt (Log) Distribution", fontsize=18)
 # sub_plot_2.set_xlabel("")
 # sub_plot_2.set_ylabel("Probability", fontsize=15)
 
-# # 显示图形
-# plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # 调整布局，为标题留出空间
-# plt.show()
+# 显示图形
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # 调整布局，为标题留出空间
+plt.show()
 
 # # 单特征箱线图，区分是否违约
 # box_fea = [ 'loanAmnt', 'interestRate', 'installment',  'postCode', 'regionCode', 'openAcc', 'totalAcc', 'n2', 'n3']
